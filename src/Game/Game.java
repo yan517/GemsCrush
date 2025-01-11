@@ -72,12 +72,12 @@ public class Game extends JPanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
 
-        bg = new Sound("src/assets/Moomin.wav");
+        bg = new Sound("assets/Moomin.wav");
         bg.loop();
-        fall = new Sound("src/assets/fall.wav");
-        match = new Sound("src/assets/match.wav");
-        select = new Sound("src/assets/select.wav");
-        change = new Sound("src/assets/change.wav");
+        fall = new Sound("assets/fall.wav");
+        match = new Sound("assets/match.wav");
+        select = new Sound("assets/select.wav");
+        change = new Sound("assets/change.wav");
         gameStart = new GameStart();
         gameStart.setFocusable(true);
         frame.setContentPane(gameStart);
@@ -110,12 +110,12 @@ public class Game extends JPanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
 
-        bg = new Sound("src/assets/Moomin.wav");
+        bg = new Sound("assets/Moomin.wav");
         bg.loop();
-        fall = new Sound("src/assets/fall.wav");
-        match = new Sound("src/assets/match.wav");
-        select = new Sound("src/assets/select.wav");
-        change = new Sound("src/assets/change.wav");
+        fall = new Sound("assets/fall.wav");
+        match = new Sound("assets/match.wav");
+        select = new Sound("assets/select.wav");
+        change = new Sound("assets/change.wav");
         int count = 0;
         String gemName = "";
         int i = 0;
@@ -320,10 +320,10 @@ public class Game extends JPanel {
                                         //System.out.println("point  " + e.getX());
                                         if (difGem[c].isAt(pt)) {
 
-                                            System.out.println("Mouse Entered: " + c);
+                                            //System.out.println("Mouse Entered: " + c);
 
                                             if (((int) (pt.getX() - 240) / 65 > (preSaveCoordinateX)) && ((int) (pt.getY() - 40) / 65 > (preSaveCoordinateY))) {
-                                                change = new Sound("src/assets/change.wav");
+                                                change = new Sound("assets/change.wav");
                                                 change.play();
                                                 swap(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY], difGem[preSaveCoordinateX * 8 + preSaveCoordinateY + 9]);
                                                 difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].setPosX_(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].getPosX_() + 65);
@@ -337,7 +337,7 @@ public class Game extends JPanel {
 
                                                 repaint();
                                             } else if (((int) (pt.getX() - 240) / 65 < (preSaveCoordinateX)) && ((int) (pt.getY() - 40) / 65 < (preSaveCoordinateY))) {
-                                                change = new Sound("src/assets/change.wav");
+                                                change = new Sound("assets/change.wav");
                                                 change.play();
                                                 swap(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY], difGem[preSaveCoordinateX * 8 + preSaveCoordinateY - 9]);
                                                 difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].setPosX_(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].getPosX_() - 65);
@@ -351,7 +351,7 @@ public class Game extends JPanel {
 
                                                 repaint();
                                             } else if (((int) (pt.getX() - 240) / 65 < (preSaveCoordinateX)) && ((int) (pt.getY() - 40) / 65 > (preSaveCoordinateY))) {
-                                                change = new Sound("src/assets/change.wav");
+                                                change = new Sound("assets/change.wav");
                                                 change.play();
                                                 swap(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY], difGem[preSaveCoordinateX * 8 + preSaveCoordinateY - 7]);
                                                 difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].setPosX_(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].getPosX_() - 65);
@@ -365,7 +365,7 @@ public class Game extends JPanel {
 
                                                 repaint();
                                             } else if (((int) (pt.getX() - 240) / 65 > (preSaveCoordinateX)) && ((int) (pt.getY() - 40) / 65 < (preSaveCoordinateY))) {
-                                                change = new Sound("src/assets/change.wav");
+                                                change = new Sound("assets/change.wav");
                                                 change.play();
                                                 swap(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY], difGem[preSaveCoordinateX * 8 + preSaveCoordinateY + 7]);
                                                 difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].setPosX_(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].getPosX_() + 65);
@@ -378,7 +378,7 @@ public class Game extends JPanel {
                                                 }
                                                 repaint();
                                             } else if ((int) (pt.getY() - 40) / 65 > (preSaveCoordinateY)) {
-                                                change = new Sound("src/assets/change.wav");
+                                                change = new Sound("assets/change.wav");
                                                 change.play();
                                                 swap(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY], difGem[preSaveCoordinateX * 8 + preSaveCoordinateY + 1]);
                                                 difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].setPosY_(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].getPosY_() + 65);
@@ -386,7 +386,7 @@ public class Game extends JPanel {
                                                 preSaveCoordinateY = (int) ((difGem[preSaveCoordinateX * 8 + preSaveCoordinateY + 1].getPosY()));
                                                 repaint();
                                             } else if ((int) (pt.getY() - 40) / 65 < (preSaveCoordinateY)) {
-                                                change = new Sound("src/assets/change.wav");
+                                                change = new Sound("assets/change.wav");
                                                 change.play();
                                                 swap(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY], difGem[preSaveCoordinateX * 8 + preSaveCoordinateY - 1]);
                                                 difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].setPosY_(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].getPosY_() - 65);
@@ -394,7 +394,7 @@ public class Game extends JPanel {
                                                 preSaveCoordinateY = (int) ((difGem[preSaveCoordinateX * 8 + preSaveCoordinateY - 1].getPosY()));
                                                 repaint();
                                             } else if ((int) (pt.getX() - 240) / 65 > (preSaveCoordinateX)) {
-                                                change = new Sound("src/assets/change.wav");
+                                                change = new Sound("assets/change.wav");
                                                 change.play();
                                                 swap(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY], difGem[preSaveCoordinateX * 8 + preSaveCoordinateY + 8]);
                                                 difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].setPosX_(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].getPosX_() + 65);
@@ -404,7 +404,7 @@ public class Game extends JPanel {
                                                 repaint();
 
                                             } else if ((int) (pt.getX() - 240) / 65 < (preSaveCoordinateX)) {
-                                                change = new Sound("src/assets/change.wav");
+                                                change = new Sound("assets/change.wav");
                                                 change.play();
                                                 swap(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY], difGem[preSaveCoordinateX * 8 + preSaveCoordinateY - 8]);
                                                 difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].setPosX_(difGem[preSaveCoordinateX * 8 + preSaveCoordinateY].getPosX_() - 65);
@@ -658,7 +658,7 @@ public class Game extends JPanel {
                     s2 = PI.preview(set);
                     fall.play();
                     repaint();
-                    System.out.println(s1 + " " + s2);
+                    //System.out.println(s1 + " " + s2);
                 }
 
             }

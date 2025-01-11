@@ -1,9 +1,11 @@
-//Author: Lam Yan Yan Cindy, Tse Wai To
+//Author:Cindy Lam
 
 package Game;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -26,15 +28,20 @@ public class Sound {
         // (assuming the sound can be played by the audio system)
         // from a wave File
         try {
-            File file = new File(fileName);
-            if (file.exists()) {
-                AudioInputStream sound = AudioSystem.getAudioInputStream(file);
-                // load the sound into memory (a Clip)
-                clip = AudioSystem.getClip();
-                clip.open(sound);
-            } else {
-                throw new RuntimeException("Sound: file not found: " + fileName);
+            InputStream audioSrc = Sound.class.getClassLoader().getResourceAsStream(fileName);
+
+            if (audioSrc == null) {
+                System.err.println("file is not found： " + fileName);
+                return;
             }
+
+            InputStream bufferedIn = new BufferedInputStream(audioSrc);
+
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(bufferedIn);
+            // load the sound into memory (a Clip)
+            clip = AudioSystem.getClip();
+            clip.open(audioStream);
+             
         } catch (MalformedURLException e) {
             e.printStackTrace();
             throw new RuntimeException("Sound: Malformed URL: " + e);
