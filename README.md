@@ -4,7 +4,7 @@ Gems Crush is a simplified version of the classic tile-matching puzzle video gam
 chain of three or more gems in the same color. Gems disappear when chains are formed and gems fall from the top to fill in gaps.
 
 ## How to execute the jar file 
-java --enable-preview -cp GemsCrush.jar Game.Game
+java --enable-preview -cp (FilePath\GemsCrush.jar) Game.Game
 
 
 ### Game Screen
