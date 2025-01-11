@@ -3,6 +3,10 @@
 Gems Crush is a simplified version of the classic tile-matching puzzle video game, Bejeweled. User can swap one gem with an adjacent gem to form a horizontal or vertical
 chain of three or more gems in the same color. Gems disappear when chains are formed and gems fall from the top to fill in gaps.
 
+## How to execute the jar file 
+java --enable-preview -cp GemsCrush.jar Game.Game
+
+
 ### Game Screen
 
 ![image](https://user-images.githubusercontent.com/111167537/225248339-9788cf70-cc6d-4b03-a182-71280f2b3f46.png)
