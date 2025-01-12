@@ -1,4 +1,4 @@
-//Author: Lam Yan Yan Cindy, Tse Wai To
+//Author: Lam Yan Yan Cindy
 
 package Game;
 
@@ -280,6 +280,23 @@ public class Game extends JPanel {
                                     difGem[x].setP(file);
                                 }
                             }
+                            break;
+                        }
+                        case KeyEvent.VK_R: {
+                            Thread t = new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    frame.setVisible(false);
+                                    frame.dispose();
+                                    time = 100;
+                                    score = 0;
+                                    Limit = 0;
+                                    end = false;
+                                    startGame();
+                                }
+
+                            });
+                            t.start();
                             break;
                         }
                     }
@@ -734,7 +751,8 @@ public class Game extends JPanel {
 
         public void gameOver() {
             System.out.println(end);
-            repaint();
+            bg.stop();
+            //repaint();
         }
 
         public void idle(final int ms) {
@@ -780,8 +798,9 @@ public class Game extends JPanel {
                 g.setFont(new Font("TimesRoman", Font.PLAIN, 50));
                 g.setColor(Color.WHITE);
                 g.drawString("Time out", 291, 250);
-                g.drawString("Score: ", 290, 290);
-                g.drawString(Integer.toString(score), 425, 290);
+                g.drawString("Score:  ", 290, 290);
+                g.drawString("Press R to replay", 290, 350);
+                g.drawString(Integer.toString(score), 450, 290);
             }
 
         }
